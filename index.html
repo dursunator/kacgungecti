@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gün Sayacı</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .days {
+            font-size: 4em;
+            font-weight: bold;
+            color: #00ffcc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>8 Ağustos 2025'ten bugüne geçen gün sayısı:</h1>
+        <div class="days" id="daysPassed"></div>
+    </div>
+<script>
+        const targetDate = new Date("2025-08-08");
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); 
+        const diffTime = today - targetDate;
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const output = diffDays >= 0 ? `${diffDays} gün geçti.` : `${Math.abs(diffDays)} gün kaldı.`;
+        document.getElementById("daysPassed").textContent = output;
+    </script>
+</body>
+</html>
