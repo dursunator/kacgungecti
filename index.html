@@ -36,15 +36,14 @@
         <div class="days" id="daysPassed"></div>
     </div>
 <script>
-        const targetDate = new Date("2025-08-08");
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); 
-        const diffTime = today - targetDate;
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        const output = diffDays >= 0 ? `${diffDays} gün geçti.` : `${Math.abs(diffDays)} gün kaldı.`;
-        document.getElementById("daysPassed").textContent = output;
+const targetDate = new Date("2025-08-08");
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+targetDate.setHours(0, 0, 0, 0);
+const diffTime = today - targetDate;
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+const output = diffDays >= 0 ? `${diffDays} gün geçti.` : `${Math.abs(diffDays)} gün kaldı.`;
+document.getElementById("daysPassed").textContent = output;
     </script>
 </body>
 </html>
-
-
